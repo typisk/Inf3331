@@ -1,0 +1,7 @@
+your_script	your_script-module.html
+your_script.inp	your_script-module.html#inp
+your_script.stop	your_script-module.html#stop
+your_script.step	your_script-module.html#step
+your_script.r	your_script-module.html#r
+your_script.func	your_script-module.html#func
+your_script.usage	your_script-module.html#usage
