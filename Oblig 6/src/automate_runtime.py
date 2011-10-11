@@ -1,4 +1,4 @@
-import sys,re, getopt, commands
+import sys,re, commands
 usage = 'Usage: %s inputfile outputfile var1 var2 varN...' % sys.argv[0]
 
 try:
@@ -6,12 +6,12 @@ try:
 except:
     print usage; sys.exit(1)
 
-data = ''
-cmd = 'python %s %s' % (infile, " ".join(args))
+data = ''   # avoid multiple writings in a file, saves up text instead
+cmd = 'python %s %s' % (infile, " ".join(args))     #splits the arguments
 
 testfile = open(infile, 'r')
 for line in testfile:
-    data += line + '\n'
+    data += line
 
 data += '\n\n"""\n'         # start rundtime example
 data += 'Runtime example:\n'
@@ -26,8 +26,8 @@ for line in output.splitlines():
 
 data += '"""' # end runtime example
 
-outfile = open(outfile, 'w')
-outfile.write(data)
+outfile = open(outfile, 'w')    
+outfile.write(data)             # writes to file
 
 """
 > python automate_runtime.py bar.py assignment.txt 2 3
